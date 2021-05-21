@@ -1,0 +1,73 @@
+body
+{
+    font-family: "bluu", serif;
+    background-image: url("images/back.jpg");
+    background-repeat: repeat;
+}
+
+h1
+{
+    font-family: "bluu_nexttitling", serif;
+    margin: 1rem;
+}
+
+nav, footer
+{
+    font-family: "bluu", arial;
+    font-style: italic;
+}
+
+footer
+{
+    text-decoration: underline;
+    text-align: right;
+}
+
+.jumbotron
+{
+    background-color: rgba(73, 80, 87, 0.2);
+}
+
+.carousel-caption
+{
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));
+}
+
+.carousel-caption a
+{
+    color: antiquewhite;
+}
+
+.carousel-caption h5
+{
+    font-size: xx-large;
+}
+
+.carousel-caption p
+{
+    font-size: x-large;
+}
+
+.carousel-control-next-icon
+{
+    background-image: url("./images/next-icon.svg");
+}
+
+.carousel-control-prev-icon
+{
+    background-image: url("./images/prev-icon.svg")
+}
+
+
+/* for harry.html */
+
+.choices
+{
+    display: flex;
+    justify-content: center;
+}
+
+.choices a
+{
+    margin: 1rem;
+}
