@@ -24,11 +24,15 @@
             textarea = document.querySelector("textarea.form-control");
             submitButton = document.querySelector("#submit")
             choices = document.querySelectorAll(".btn-secondary");
-            image = document.querySelector(".card-img-top");
+            images = document.querySelector(".card-img-top");
             image.src = "./images/glasses.gif";
             for (let i = 0; i < choices.length; i++)
             {
                 choices[i].style.display = "none";
+            }
+            for (let i = 1; i < images.length; i++)
+            {
+                images[i].style.display = "none";
             }
             let qno = 1;
             let score = 0;
@@ -51,7 +55,7 @@
                 {
                     newQuestion = questions[qno];
                     question.innerHTML = newQuestion.question;
-                    image.src = newQuestion.imgsrc;
+                    images[qno - 1].style.display = "none";
                     if (newQuestion.rightAnswer != null)
                     {
                         textarea.style.display = "block";
@@ -76,43 +80,51 @@
                         }
                     }
                     qno++;
-                    header.innerHTML = `Question ${qno}`;
+                    images[qno-1].style.display="block";
+                    header.innerHTML  = `Question ${qno}`;
                 }
                 else if (qno == questions.length)
                 {
+                    images[qno-1].style.display="none";
                     let result, imgsrc;
                     if (score >= 105)
                     {
                         result = "The golden trio needs to make room for one more member - you, Harry, Ron and Hermione - The Golden Four!";
-                        imgsrc = "./images/trio.jpg";
+                        //imgsrc = "./images/trio.jpg";
+                        imgsrc=10;
                     }
                     else if (score > 40)
                     {
                         result = "You are definitely getting invited to Dumbledore's Army!";
-                        imgsrc = "./images/da.jpg";
+                        //imgsrc = "./images/da.jpg";
+                        imgsrc = 11;
                     }
                     else if (score > 0)
                     {
                         result = "I mean, Harry doesn't mind you";
-                        imgsrc = "./images/brilliant.gif";
+                        //imgsrc = "./images/brilliant.gif";
+                        imgsrc = 12;
                     }
                     else if (score > -20)
                     {
                         result = "You and Harry just won't be friends";
-                        imgsrc = "./images/mental.gif";
+                        //imgsrc = "./images/mental.gif";
+                        imgsrc = 13;
                     }
                     else if (score > -60)
                     {
                         result = "Grab your wand tight if you ever meet Harry, cuz you're sure to get an <em>Expelliarmus</em> cast your way!"
-                        imgsrc = "./images/expelliarmus.gif";
+                        //imgsrc = "./images/expelliarmus.gif";
+                        imgsrc = 14;
                     }
                     else
                     {
                         result = "You give You-Know-Who a run for the top-spot on Harry's loathing list!!!";
-                        imgsrc = "./images/together.jpg";
+                        //imgsrc = "./images/together.jpg";
+                        imgsrc = 15;
                     }
                     question.innerHTML = result;
-                    image.src = imgsrc;
+                    images[imgsrc].style.display="block";
                     header.style.display = "none";
                     textarea.style.display = "none";
                     submitButton.style.display = "none";
@@ -158,19 +170,44 @@
             <div class="card-header text-left">
                 Question 1
             </div>
-            <img src="" class="card-img-top" alt="">
+<!--images/glasses.gif"));
+  "./images/quidditch-bedroom.png"));
+            que./images/black-family-tree.png"));
+            qu./images/exceptionally-ordinary.gif"));
+            questions.pu./images/death-eaters.jpg"));
+            questions.pus./images/neville-booked.gif"));
+            questions.push(new Q./images/divination.jpg"));
+            questions.push(new Qu./images/elder-wand.jpg"));
+            questions.push(new Qu./images/flitwick-yes.gif"))
+            questions.pu./images/horcruxes.jpg"));-->
+            <img src="./images/glasses.gif" id="1" class="card-img-top" alt="">
+<img src="./images/quidditch-bedroom.png" id="2" class="card-img-top" alt="">
+<img src="./images/black-family-tree.png" id="3" class="card-img-top" alt="">
+<img src="./images/exceptionally-ordinary.gif" id="4" class="card-img-top" alt="">
+<img src="./images/death-eaters.jpg" id="5" class="card-img-top" alt="">
+<img src="./images/neville-booked.gif" id="6" class="card-img-top" alt="">
+<img src="./images/divination.jpg" id="7" class="card-img-top" alt="">
+<img src="./images/elder-wand.jpg" id="8" class="card-img-top" alt="">
+<img src="./images/flitwick-yes.gif" id="9" class="card-img-top" alt="">
+<img src="./images/horcruxes.jpg" id="10" class="card-img-top" alt="">
+<img src="./images/trio.jpg" id="11" class="card-img-top" alt="">
+<img src="./images/da.jpg" id="12" class="card-img-top" alt="">
+<img src="./images/brilliant.gif" id="13" class="card-img-top" alt="">
+<img src="./images/mental.gif" id="14" class="card-img-top" alt="">
+<img src="./images/expelliarmus.gif" id="15" class="card-img-top" alt="">
+<img src="./images/together.jpg" id="16" class="card-img-top" alt="">
             <div class="card-body">
                 <h5 class="card-title"></h5>
                 <!--<p class="card-text">How is the and what is the but when is the potter harry?</p>-->
                 <div class="choices">
                     <textarea class="form-control"></textarea>
                     <a id="submit" class="btn btn-primary">Answer</a>
-                    <a id="1" class="btn btn-secondary"></a>
-                    <a id="2" class="btn btn-secondary"></a>
-                    <a id="3" class="btn btn-secondary"></a>
-                    <a id="4" class="btn btn-secondary"></a>
-                    <a id="5" class="btn btn-secondary"></a>
-                    <a id="6" class="btn btn-secondary"></a>
+                    <a id="1c" class="btn btn-secondary"></a>
+                    <a id="2c" class="btn btn-secondary"></a>
+                    <a id="3c" class="btn btn-secondary"></a>
+                    <a id="4c" class="btn btn-secondary"></a>
+                    <a id="5c" class="btn btn-secondary"></a>
+                    <a id="6c" class="btn btn-secondary"></a>
                 </div>
             </div>
         </div>
