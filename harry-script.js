@@ -97,7 +97,7 @@ document.addEventListener("DOMContentLoaded", function () {
             cardBody.style.position = "absolute";
             cardBody.style.width = "100%"
             question.style.textAlign = "center";
-            question.style.fontSize = "5em";
+            question.style.fontSize = "xx-large";
             question.style.color = "antiquewhite";
         }
     }
