@@ -72,3 +72,15 @@ footer
 {
     margin: 1rem;
 }
+
+/* for calculator.html */
+
+#calculator
+{
+    font-size: x-large;
+}
+
+.col-4
+{
+    font-size: large;
+}
