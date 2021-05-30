@@ -13,20 +13,24 @@
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./webfonts/stylesheet.css">
     <link href="styles.css" rel="stylesheet">
+    <script src="./calculator-script.js"></script>
     <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-PMQTZHD');</script>
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-PMQTZHD');</script>
     <!-- End Google Tag Manager -->
     <title>Saki's Workshop | Calculator for duds</title>
 </head>
 
 <body>
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PMQTZHD"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PMQTZHD" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
     <header class="container">
         <h1>Calculator</h1>
@@ -40,12 +44,46 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </nav>
     </header>
     <main class="jumbotron">
-        <div class="card" style="width: 18rem;">
-            <img src="./images/hermione.jpg" class="card-img-top" alt="Hermione glaring at Ron after 'copy off you'">
-            <div class="card-body">
-                <h5 class="card-title">500</h5>
-                <p class="card-text">Yo, I'm no Hermione, this assignment is overdue!</p>
-                <a href="./index.html" class="btn btn-primary">Homepage</a>
+        <div class="card container-sm" id="calculator">
+            <div class="card-body list-group list-group-flush">
+                <div class="card-subtitle mb-2 text-muted text-right">
+                    0.0
+                </div>
+                <div class="card-title text-right">
+                    0.0
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <button type="button" class="col-4 btn">C</button>
+                        <button type="button" class="col-4 btn"><-</button>
+                        <button type="button" class="col-4 btn">=</button>
+                    </div>
+                    <div class="row">
+                        <button type="button" class="col-4 btn">1</button>
+                        <button type="button" class="col-4 btn">2</button>
+                        <button type="button" class="col-4 btn">3</button>
+                    </div>
+                    <div class="row">
+                        <button type="button" class="col-4 btn">4</button>
+                        <button type="button" class="col-4 btn">5</button>
+                        <button type="button" class="col-4 btn">6</button>
+                    </div>
+                    <div class="row">
+                        <button type="button" class="col-4 btn">7</button>
+                        <button type="button" class="col-4 btn">8</button>
+                        <button type="button" class="col-4 btn">9</button>
+                    </div>
+                    <div class="row">
+                        <button type="button" class="col-4 btn">+</button>
+                        <button type="button" class="col-4 btn">0</button>
+                        <button type="button" class="col-4 btn">x</button>
+                    </div>
+                    <div class="row">
+                        <button type="button" class="col-4 btn">-</button>
+                        <button type="button" class="col-4 btn">.</button>
+                        <button type="button" class="col-4 btn">/</button>
+                    </div>
+                </div>
             </div>
         </div>
     </main>
