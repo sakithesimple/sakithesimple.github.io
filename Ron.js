@@ -17,16 +17,35 @@ document.addEventListener("DOMContentLoaded", function () {
     let score = 0;
     let answer;
     questions = [];
-    questions.push(new Question("Harry breaks his glasses a lot (like a LOT). How do you fix it?", [], "oculus reparo", [10, 0], "./images/glasses.gif"));
-    questions.push(new Question("Do you like quidditch?", ["Do I-!... You should see my bedroom wall &#128584;", "Soccer is better", "I play for Gryffindor", "Hufflepuff", "Ravenclaw", "Slytherin"], null, [15, -5, 15, 5, 0, -10], "./images/quidditch-bedroom.png"));
-    questions.push(new Question("Are you-", ["muggle", "squib", "muggle-born", "half-blood", "pure-blood", "elf"], null, [0, 0, 5, 5, 0, 0], "./images/black-family-tree.png"));
-    questions.push(new Question("Harry also gets his nose bled a lot. You're up! How do you make him <em>exceptionally ordinary</em>?", [], "episkey", [10, 0], "./images/exceptionally-ordinary.gif"));
-    questions.push(new Question("Are you-", ["a Death Eater", "an Order of the Phoenix", "a double agent", "with the Ministry", "humbly below those ranks"], null, [-15, 10, 5, 0, 5], "./images/death-eaters.jpg"));
-    questions.push(new Question("It's the 31st of July &#127881; What have you got for the party?", ["a bunch of dung-bombs", "Nimbus-2001", "a cursed necklace", "The Monster Book of Monsters", "What party?!"], null, [5, 10, -10, 0, -5], "./images/neville-booked.gif"));
-    questions.push(new Question("Is divination real?", ["as real as Voldy's nose &#128513;", "I mean, it's better than knowing nothing", "divination eats physics for breakfast and chemistry for lunch!"], null, [10, 0, -5], "./images/divination.jpg"));
-    questions.push(new Question("If you had the Elder Wand you would-", ["fight dark wizards with it", "make a fortune", "give it to your best friend", "curse Harry", "snap it"], null, [10, 0, 5, -10, 15], "./images/elder-wand.jpg"));
-    questions.push(new Question("Have you ever hit umbridge with a Filibuster's or Weasleys'? &#127878;", ["Yours truly, yes &#128522;", "No, but I cheered", "Why would you do that!"], null, [15, 5, -10], "./images/flitwick-yes.gif"))
-    questions.push(new Question("Name all 7 horcruxes of Voldemort", [], "too complicated", [-10, 0, 2, 4, 6, 8, 11, 15], "./images/horcruxes.jpg"));
+    const books = ['Sorcerer\'s Stone', 'Chamber of Secrets', 'Prisoner of Azkaban', 'Goblet of Fire', 'Order of phoenix', 'Half-blood Prince', 'Deathly Hallows']
+    const MA = 10;
+    const one = [MA, 0, 0, 0, 0, 0, 0]
+    const two = [0, MA, 0, 0, 0, 0, 0]
+    const three = [0, 0, MA, 0, 0, 0, 0]
+    const four = [0, 0, 0, MA, 0, 0, 0]
+    const five = [0, 0, 0, 0, MA, 0, 0]
+    const six = [0, 0, 0, 0, 0, MA, 0]
+    const seven = [0, 0, 0, 0, 0, 0, MA]
+    questions.push(new Question("Easy ones first- \"She <em>needs</em> to sort out her priorities!\"", books, null, one, ""));
+    questions.push(new Question("\"She <em>needs</em> to sort out her priorities!\"<br>About whom?", [], 'name', ['hermione'], ""));
+    questions.push(new Question("\"It's beautiful, isn't it, the moon&#128525;\"", books, null, six, ""));
+    questions.push(new Question("\"It's beautiful, isn't it, the moon&#128525;\"<br> To whom?, [], 'name', ['harry'], ""));
+    questions.push(new Question("\"why spiders? why can't it be follow the butterflies!?\"", books, null, two, ""));
+    questions.push(new Question("\"why spiders? why can't it be follow the butterflies!?\"<br>To whom?", [], 'name', ['harry'], ""));
+    questions.push(new Question("\"You look dreadful, Ron!\"<br>This one's TO Ron", books, null, six, ""));
+    questions.push(new Question("\"You look dreadful, Ron!\"<br>And who was so rude!", [], 'name', ['luna', 'lovegood'], ""));
+    questions.push(new Question("\"Spiders, spiders, they want me  to tap dance, I don't wanna tap dance!\"", books, null, three, ""));
+    questions.push(new Question("\"You tell 'em, Ron!\"<br>Who's so chill?", [], 'name', ['harry'], ""));
+    questions.push(new Question("\"Percy wouldn’t recognize a joke if it danced naked in front of him wearing dobby’s tea cozy!\"", books, null, four, ""));
+    questions.push(new Question("\"Percy wouldn’t recognize a joke if it danced naked in front of him wearing dobby’s tea cozy!\"<br>To whom?", [], 'name', ['hermione'], ""));
+    questions.push(new Question("\"I Want To Fix That In My Memory Forever.\"", books, null, four, ""));
+    questions.push(new Question("\"I Want To Fix That In My Memory Forever.\"<br>What\s he talking about?", [], 'name', ['draco', 'malfoy', 'ferret'], ""));
+    questions.push(new Question("\"Those Muggle Nutters That Cut People Up?\"", books, null, five, ""));
+    questions.push(new Question("\"Those Muggle Nutters That Cut People Up?\"<br>About whom?", [], 'name', ['doctor'], ""));
+    questions.push(new Question("\"Excuse me, are you the imprint of a departed soul?\"", books, null, six, ""));
+    questions.push(new Question("\"Excuse me, are you the imprint of a departed soul?\"<br>To whom?", [], 'name', ['snape', 'severus'], ""));
+    questions.push(new Question("\"It's me, I'm extremely famous.\"", books, null, seven, "./images/glasses.gif"));
+    questions.push(new Question("\"It's me, I'm extremely famous.\"<br>To whom?<br>About whom?", [], 'name', ['hermione'], ""));
     function nextQuestion() {
         score += questions[qno - 1].mark(answer);
         if (qno < questions.length) {
@@ -58,33 +77,28 @@ document.addEventListener("DOMContentLoaded", function () {
         else if (qno == questions.length) {
             images[qno - 1].style.display = "none";
             let result, imgsrc;
-            if (score >= 105) {
-                result = "The golden trio needs to make room for one more member - you, Harry, Ron and Hermione - The Golden Four!";
+            if (score >= 100) {
+                result = "Are you in love with Ron? Score: " + score.toString() + "!";
                 //imgsrc = "./images/trio.jpg";
                 imgsrc = 10;
             }
-            else if (score > 40) {
-                result = "You are definitely getting invited to Dumbledore's Army!";
-                //imgsrc = "./images/da.jpg";
-                imgsrc = 11;
-            }
-            else if (score > 0) {
-                result = "I mean, Harry doesn't mind you";
+            else if (score >= 80) {
+                result = "Wicked! Score: " + score.toString();
                 //imgsrc = "./images/brilliant.gif";
                 imgsrc = 12;
             }
-            else if (score > -20) {
-                result = "You and Harry just won't be friends";
+            else if (score > 50) {
+                result = "Impressive! Score: " + score.toString() + !;
+                //imgsrc = "./images/da.jpg";
+                imgsrc = 11;
+            }
+            else if (score > 35) {
+                result = "You heard some... Score: " + score.toString();
                 //imgsrc = "./images/mental.gif";
                 imgsrc = 13;
             }
-            else if (score > -60) {
-                result = "Grab your wand tight if you ever meet Harry, cuz you're sure to get an <em>Expelliarmus</em> cast your way!"
-                //imgsrc = "./images/expelliarmus.gif";
-                imgsrc = 14;
-            }
             else {
-                result = "You give You-Know-Who a run for the top-spot on Harry's loathing list!!!";
+                result = "BlOOody HElL!! Score: " + score.toString() + !;
                 //imgsrc = "./images/together.jpg";
                 imgsrc = 15;
             }
