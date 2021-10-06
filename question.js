@@ -10,7 +10,14 @@ class Question
     }
     mark(answer)
     {
-        if (this.rightAnswer == "too complicated")
+        if (this.rightAnswer == "name") {
+            let answers = answer.split(/\n|,|and/);
+            if (answers.some(a => this.markKey.includes(a))) {
+                return 5
+            } else {
+                return 0
+            }
+        } else if (this.rightAnswer == "too complicated")
         {
             let answers = answer.split(/\n|,|and/);
             let rightAnswers = 0;
