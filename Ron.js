@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
     questions.push(new Question("Easy ones first- \"She <em>needs</em> to sort out her priorities!\"", books, null, one, ""));
     questions.push(new Question("\"She <em>needs</em> to sort out her priorities!\"<br>About whom?", [], 'name', ['hermione'], ""));
     questions.push(new Question("\"It's beautiful, isn't it, the moon&#128525;\"", books, null, six, ""));
-    questions.push(new Question("\"It's beautiful, isn't it, the moon&#128525;\"<br> To whom?, [], 'name', ['harry'], ""));
+    questions.push(new Question("\"It's beautiful, isn't it, the moon&#128525;\"<br> To whom?", [], 'name', ['harry'], ""));
     questions.push(new Question("\"why spiders? why can't it be follow the butterflies!?\"", books, null, two, ""));
     questions.push(new Question("\"why spiders? why can't it be follow the butterflies!?\"<br>To whom?", [], 'name', ['harry'], ""));
     questions.push(new Question("\"You look dreadful, Ron!\"<br>This one's TO Ron", books, null, six, ""));
@@ -88,7 +88,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 imgsrc = 12;
             }
             else if (score > 50) {
-                result = "Impressive! Score: " + score.toString() + !;
+                result = "Impressive! Score: " + score.toString() + "!";
                 //imgsrc = "./images/da.jpg";
                 imgsrc = 11;
             }
@@ -98,7 +98,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 imgsrc = 13;
             }
             else {
-                result = "BlOOody HElL!! Score: " + score.toString() + !;
+                result = "BlOOody HElL!! Score: " + score.toString() + "!";
                 //imgsrc = "./images/together.jpg";
                 imgsrc = 15;
             }
