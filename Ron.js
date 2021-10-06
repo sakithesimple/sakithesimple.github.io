@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let qno = 1;
     textarea.style.display = "none";
     submitButton.style.display = "none";
-    for (let i = 0; i < books; i++) {
+    for (let i = 0; i < books.length; i++) {
        choices[i].style.display = "block";
        choices[i].innerHTML = books[i];
     }
