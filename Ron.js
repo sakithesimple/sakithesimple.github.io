@@ -7,17 +7,28 @@ document.addEventListener("DOMContentLoaded", function () {
     submitButton = document.querySelector("#submit")
     choices = document.querySelectorAll(".btn-secondary");
     images = document.querySelectorAll(".card-img-top");
-    for (let i = 0; i < choices.length; i++) {
+    /*for (let i = 0; i < choices.length; i++) {
         choices[i].style.display = "none";
-    }
+    }*/
+    textarea.style.display = "none";
     for (let i = 1; i < images.length; i++) {
         images[i].style.display = "none";
     }
+    const books = ['Sorcerer\'s Stone', 'Chamber of Secrets', 'Prisoner of Azkaban', 'Goblet of Fire', 'Order of phoenix', 'Half-blood Prince', 'Deathly Hallows']
     let qno = 1;
+    textarea.style.display = "none";
+    submitButton.style.display = "none";
+    for (let i = 0; i < books; i++) {
+       choices[i].style.display = "block";
+       choices[i].innerHTML = books[i];
+    }
+    for (let i = books.length; i <books.length; i++) {
+        choices[i].style.display = "none";
+    }
     let score = 0;
     let answer;
     questions = [];
-    const books = ['Sorcerer\'s Stone', 'Chamber of Secrets', 'Prisoner of Azkaban', 'Goblet of Fire', 'Order of phoenix', 'Half-blood Prince', 'Deathly Hallows']
+    
     const MA = 10;
     const one = [MA, 0, 0, 0, 0, 0, 0]
     const two = [0, MA, 0, 0, 0, 0, 0]
@@ -115,6 +126,7 @@ document.addEventListener("DOMContentLoaded", function () {
             question.style.color = "antiquewhite";
         }
     }
+
     for (let i = 0; i < choices.length; i++) {
         choices[i].addEventListener("click", function () {
             answer = i;
