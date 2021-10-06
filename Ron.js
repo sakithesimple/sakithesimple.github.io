@@ -103,15 +103,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 //imgsrc = "./images/da.jpg";
                 imgsrc = 12;
             }
-            else if (score > 35) {
-                result = "You heard some... Score: " + score.toString();
-                //imgsrc = "./images/mental.gif";
-                imgsrc = 13;
-            }
             else {
                 result = "BlOOody HElL!! Score: " + score.toString() + "!";
                 //imgsrc = "./images/together.jpg";
-                imgsrc = 14;
+                imgsrc = 13;
             }
             question.innerHTML = result;
             images[imgsrc].style.display = "block";
