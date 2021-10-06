@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let header = document.querySelector(".card-header");
     let question = document.querySelector(".card-title");
     header.innerHTML = "Question 1";
-    question.innerHTML = "Harry breaks his glasses a lot (like a LOT). How do you fix it?";
+    question.innerHTML = "Easy ones first- \"She <em>needs</em> to sort out her priorities!\"";
     textarea = document.querySelector("textarea.form-control");
     submitButton = document.querySelector("#submit")
     choices = document.querySelectorAll(".btn-secondary");
