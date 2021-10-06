@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (qno < questions.length) {
             newQuestion = questions[qno];
             question.innerHTML = newQuestion.question;
-            images[qno - 1].style.display = "none";
+            
             if (newQuestion.rightAnswer != null) {
                 textarea.style.display = "block";
                 submitButton.style.display = "block";
@@ -71,11 +71,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             }
             qno++;
-            images[qno - 1].style.display = "block";
+            
             header.innerHTML = `Question ${qno}`;
         }
         else if (qno == questions.length) {
-            images[qno - 1].style.display = "none";
+            
             let result, imgsrc;
             if (score >= 100) {
                 result = "Are you in love with Ron? Score: " + score.toString() + "!";
@@ -85,12 +85,12 @@ document.addEventListener("DOMContentLoaded", function () {
             else if (score >= 80) {
                 result = "Wicked! Score: " + score.toString();
                 //imgsrc = "./images/brilliant.gif";
-                imgsrc = 12;
+                imgsrc = 11;
             }
             else if (score > 50) {
                 result = "Impressive! Score: " + score.toString() + "!";
                 //imgsrc = "./images/da.jpg";
-                imgsrc = 11;
+                imgsrc = 12;
             }
             else if (score > 35) {
                 result = "You heard some... Score: " + score.toString();
@@ -100,7 +100,7 @@ document.addEventListener("DOMContentLoaded", function () {
             else {
                 result = "BlOOody HElL!! Score: " + score.toString() + "!";
                 //imgsrc = "./images/together.jpg";
-                imgsrc = 15;
+                imgsrc = 14;
             }
             question.innerHTML = result;
             images[imgsrc].style.display = "block";
