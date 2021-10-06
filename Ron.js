@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
     questions.push(new Question("\"Excuse me, are you the imprint of a departed soul?\"", books, null, six, ""));
     questions.push(new Question("\"Excuse me, are you the imprint of a departed soul?\"<br>To whom?", [], 'name', ['snape', 'severus'], ""));
     questions.push(new Question("\"It's me, I'm extremely famous.\"", books, null, seven, "./images/glasses.gif"));
-    questions.push(new Question("\"It's me, I'm extremely famous.\"<br>To whom?<br>About whom?", [], 'name', ['hermione'], ""));
+    questions.push(new Question("\"It's me, I'm extremely famous.\"<br>To whom?", [], 'name', ['hermione'], ""));
     function nextQuestion() {
         score += questions[qno - 1].mark(answer);
         if (qno < questions.length) {
@@ -86,7 +86,7 @@ document.addEventListener("DOMContentLoaded", function () {
             header.innerHTML = `Question ${qno}`;
         }
         else if (qno == questions.length) {
-            
+            document.querySelector("h2").style.display = "none";
             let result, imgsrc;
             if (score >= 100) {
                 result = "Are you in love with Ron? Score: " + score.toString() + "!";
