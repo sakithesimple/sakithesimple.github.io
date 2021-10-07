@@ -109,7 +109,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 imgsrc = 13;
             }
             question.innerHTML = result;
-            question.style.backgroundColor = 'darkblue';
+            
             images[imgsrc].style.display = "block";
             header.style.display = "none";
             textarea.style.display = "none";
@@ -118,6 +118,7 @@ document.addEventListener("DOMContentLoaded", function () {
             cardBody.style.position = "absolute";
             cardBody.style.width = "100%"
             question.style.textAlign = "center";
+            question.style.backgroundColor = "darkblue";
             question.style.fontSize = "xx-large";
             question.style.color = "antiquewhite";
         }
