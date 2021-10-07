@@ -109,7 +109,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 imgsrc = 13;
             }
             question.innerHTML = result;
-            question.classList.add('bg-primary');
+            question.style.backgroundColor = 'darkblue';
             images[imgsrc].style.display = "block";
             header.style.display = "none";
             textarea.style.display = "none";
