@@ -50,9 +50,9 @@ document.addEventListener("DOMContentLoaded", function () {
     questions.push(new Question("\"Percy wouldn’t recognize a joke if it danced naked in front of him wearing dobby’s tea cozy!\"", books, null, four, ""));
     questions.push(new Question("\"Percy wouldn’t recognize a joke if it danced naked in front of him wearing dobby’s tea cozy!\"<br>To whom?", [], 'name', ['hermione'], ""));
     questions.push(new Question("\"I Want To Fix That In My Memory Forever.\"", books, null, four, ""));
-    questions.push(new Question("\"I Want To Fix That In My Memory Forever.\"<br>What\s he talking about?", [], 'name', ['draco', 'malfoy', 'ferret'], ""));
+    questions.push(new Question("\"I Want To Fix That In My Memory Forever.\"<br>What's he talking about?", [], 'name', ['draco', 'malfoy', 'ferret'], ""));
     questions.push(new Question("\"Those Muggle Nutters That Cut People Up?\"", books, null, five, ""));
-    questions.push(new Question("\"Those Muggle Nutters That Cut People Up?\"<br>About whom?", [], 'name', ['doctor'], ""));
+    questions.push(new Question("\"Those Muggle Nutters That Cut People Up?\"<br>About whom?", [], 'name', ['doctor', 'doctors'], ""));
     questions.push(new Question("\"Excuse me, are you the imprint of a departed soul?\"", books, null, six, ""));
     questions.push(new Question("\"Excuse me, are you the imprint of a departed soul?\"<br>To whom?", [], 'name', ['snape', 'severus'], ""));
     questions.push(new Question("\"It's me, I'm extremely famous.\"", books, null, seven, "./images/glasses.gif"));
@@ -109,6 +109,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 imgsrc = 13;
             }
             question.innerHTML = result;
+            question.classList.add('bg-primary');
             images[imgsrc].style.display = "block";
             header.style.display = "none";
             textarea.style.display = "none";
